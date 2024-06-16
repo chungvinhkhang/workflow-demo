@@ -1,0 +1,26 @@
+{
+  "args": ["employee_id"],
+  "entry": "step1_meet_hr",
+  "steps": {
+    "step1_meet_hr": {
+      "title": "Meet HR",
+      "desc": "",
+      "task_type": "MANUAL",
+      "next_step": "step2_learn_sop",
+      "assignee": "$employee_id"
+    },
+    "step2_learn_sop": {
+      "title": "Finish SOP online course",
+      "desc": "$LMS_BASE_URL/courses/sop?wf_task_id=$wf_task_id",
+      "task_type": "LMS_FINISH_COURSE",
+      "next_step": "step3_meet_manager",
+      "assignee": "$employee_id"
+    },
+    "step3_meet_manager" : {
+      "title": "Meet Manager",
+      "desc": "",
+      "task_type": "MANUAL",
+      "assignee": "$employee_id"
+    }
+  }
+}
